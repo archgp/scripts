@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -e "s#--enable-avahi#--disable-avahi --disable-dbus#g" \
+	-e "/systemd/d" \
+    -i PKGBUILD

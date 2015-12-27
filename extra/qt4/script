@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sed -e "s#'dbus'##g" \
+	-e "s#-dbus-linked#-no-dbus#g" \
+	-e "s#,qdbusviewer##g" \
+	-e "/\/qdbus/d" \
+	-e "/webkit/d" \
+    -i PKGBUILD

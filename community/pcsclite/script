@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sed -e "s/'systemd'//g" \
+    -e "/systemd/d" \
+    -e "s/drivers \\\/drivers/g" \
+    -i PKGBUILD

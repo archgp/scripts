@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sed -e "s/'gtk3'/'gtk2'/g" \
+    -i PKGBUILD

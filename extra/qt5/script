@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sed -e "s#'dbus'##g" \
+	-e "s#-dbus-linked#-no-dbus#g" \
+	-e "s#,qdbusviewer##g" \
+	-e "/\/qdbus/d" \
+	-e "s#'systemd'##g" \
+	-e "s#-journald#-no-journald -skip qtwebengine#g" \
+	-e "s#'libpulse'##g" \
+	-e "s#'at-spi2-core'##g" \
+	-e "s#'geoclue'##g" \
+	-e "/package_qt5-webengine/,+10d" \
+	-e "/'qt5-webengine'/d" \
+    -i PKGBUILD

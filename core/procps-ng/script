@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sed -e "s#'systemd'##g" \
+	-e "s#'libsystemd'##g" \
+	-e "s#--with-systemd#--without-systemd#g" \
+	-i PKGBUILD

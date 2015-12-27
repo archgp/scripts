@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sed -e "s/libpulse//g" \
+    -e "s/gtk3//g" \
+    -e "/package_libcanberra-pulse/,+7d" \
+    -e "s/\"\$pkgbase-pulse.*\"//g" \
+    -e "s/libcanberra-pulse//g" \
+    -e "s/--enable-pulse/--disable-pulse/g" \
+    -e "s/ pulse//g" \
+    -e "s/gtk-{2,3}/gtk-2/g" \
+    -e "s#--with-systemdsystemunitdir=/usr/lib/systemd/system##g" \
+    -i PKGBUILD

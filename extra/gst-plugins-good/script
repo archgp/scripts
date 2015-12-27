@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -e "s/'libpulse'//g" \
+    -e "s/'libgudev'//g" \
+    -i PKGBUILD

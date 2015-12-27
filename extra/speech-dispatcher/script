@@ -1,0 +1,16 @@
+#!/bin/bash
+
+md5sum=`md5sum speech-dispatcherd.service | awk '{print $1}'`
+
+rm speech-dispatcherd.service
+
+sed -e "s#'libpulse'##g" \
+    -e "s#'speech-dispatcherd.service'##g" \
+    -e "s#'$md5sum'##g" \
+    -e "s#'espeak'##g" \
+    -e "s#'espeak: Speech output using ESpeak'##g" \
+    -e '/espeak.conf/d' \
+    -e '/espeak-generic.conf/d' \
+    -e '/install.*speech-dispatcherd.service/d' -i PKGBUILD
+
+# TODO: add init file

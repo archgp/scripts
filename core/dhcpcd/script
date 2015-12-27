@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sed -e "/service/d" \
+    -e "s/bz2\"/bz2\"\)/g" \
+    -e "/install systemd/c\  rm -rf \$\{pkgdir\}\/lib" \
+    -i PKGBUILD
+
+updpkgsums

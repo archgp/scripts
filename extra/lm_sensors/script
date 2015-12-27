@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sed -e "s/healthd.service sensord.conf/sensord.conf/g" \
+	-e "/service/d" \
+    -i PKGBUILD
+
+updpkgsums

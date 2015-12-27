@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sed -e "s#'systemd'##g" \
+	-e "/systemd/d" \
+	-e "s#'dbus'##g" \
+	-e "s#,!pytalloc-util##g" \
+    -i PKGBUILD

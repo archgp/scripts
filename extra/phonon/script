@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sed -e "s/'libpulse.*'//g" \
+    -e "s/'pulseaudio.*'//g" \
+    -e "s/'libqzeitgeist'//g" \
+    -i PKGBUILD

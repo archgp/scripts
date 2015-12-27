@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sed -e "s#'systemd'##g" \
+	-e "s#--with-systemdsystemunitdir=/usr/lib/systemd/system##g" \
+	-e "s/--enable-udev-systemd-background-jobs$/--enable-udev-systemd-background-jobs=no/g" \
+	-e "/Install dmeventd socket and service/,+4d" \
+	-e "/systemd support/,+5d" \
+	-i PKGBUILD

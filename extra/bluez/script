@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sed -e "s/'systemd'//g" \
+    -e "s/'dbus'//g" \
+    -e "s/'avahi'//g" \
+    -e "s/'colord'//g" \
+    -e "s#--enable-dbus --with-dbusdir=/etc/dbus-1#--disable-dbus#g" \
+    -e "s#--enable-avahi#--disable-avahi#g" \
+    -e "/system.d/d" \
+    -i PKGBUILD

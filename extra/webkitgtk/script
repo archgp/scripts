@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sed -e "s#geoclue2##g" \
+    -e "s#gtk3##g"\
+	-e "s#webkitgtk webkitgtk2#webkitgtk2#g" \
+	-e "s#build-gtk{,2}#build-gtk2#g" \
+	-e "s#--disable-webkit2#--disable-webkit2 --disable-geolocation#g" \
+	-e "/_build gtk$/d" \
+	-e "/package_webkitgtk[^2]/,+10d" \
+	-i PKGBUILD

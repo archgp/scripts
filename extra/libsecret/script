@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sed -e "s/'python2-dbus'//g" \
+    -e "s/'dbus-glib'//g" \
+    -e "s/dbus-run-session //g" \
+    -i PKGBUILD

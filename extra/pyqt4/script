@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sed -e "s/'python-dbus'//g" \
+    -e "s/'python2-dbus'//g" \
+    -e "s/'qtwebkit'//g" \
+    -i PKGBUILD

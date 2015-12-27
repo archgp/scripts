@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sed -e "s/tar.xz\"$/tar.xz\"\)/g" \
+    -e "/service/d" \
+    -e "/socket/d" \
+    -e "s/cvsimport'/cvsimport'\)/g" \
+    -e "/gnome/d" \
+    -i PKGBUILD
+
+updpkgsums

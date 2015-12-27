@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -e "/efi/d" \
+    -e "s/\$_targets/bios/g" \
+    -i PKGBUILD

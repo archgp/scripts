@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sed '/autogen.sh/a \
+sed -i \"s/Qt5 Qt/Qt/\" configure' -i PKGBUILD
+sed -e "s#gtk3#gtk2#g" \
+    -i PKGBUILD

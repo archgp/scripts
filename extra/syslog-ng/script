@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sed -e "s#'systemd'##g" \
+	-e "s#--enable-systemd#--disable-systemd#g" \
+	-e "s#--with-systemdsystemunitdir=/usr/lib/systemd/system##g" \
+    -i PKGBUILD

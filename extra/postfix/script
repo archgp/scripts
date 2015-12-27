@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sed -e "/systemd/d" \
+    -i PKGBUILD

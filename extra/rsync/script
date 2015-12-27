@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sed -e "s/'rsyncd.service'//g" \
+    -e "s/'rsyncd@.service'//g" \
+    -e "s/'rsyncd.socket'//g" \
+    -e "/service/d" \
+    -e "/socket/d" \
+    -i PKGBUILD
+
+updpkgsums

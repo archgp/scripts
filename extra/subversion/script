@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sed -e "s#'systemd'##g" \
+	-e "/systemd/d" \
+	-e "/service/d" \
+	-e "s#'kdelibs'##g" \
+	-e "s#--with-gnome-keyring#--without-gnome-keyring#g" \
+	-e "s#--with-kwallet#--without-kwallet#g" \
+	-e "s#'libgnome-keyring'##g" \
+	-e "s#'libgnome-keyring: for GNOME Keyring for auth credentials'##g" \
+    -i PKGBUILD
+
+updpkgsums

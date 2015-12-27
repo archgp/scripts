@@ -1,0 +1,17 @@
+#!/bin/bash
+
+oldsum=`sha256sum mozconfig | awk '{print $1}'`
+
+# echo $sha256sum_old
+
+sed -e 's/--enable-pulseaudio/--disable-pulseaudio/g' -i mozconfig
+
+echo "ac_add_options --disable-necko-wifi" >> mozconfig
+echo "ac_add_options --disable-pulseaudio" >> mozconfig
+echo "ac_add_options --disable-dbus" >> mozconfig
+
+newsum=`sha256sum mozconfig | awk '{print $1}'`
+
+sed -e "s#'dbus-glib'##g" \
+    -e "s#'libpulse'##g" \
+    -e "s#$oldsum#$newsum#g" -i PKGBUILD

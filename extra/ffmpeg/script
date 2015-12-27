@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -e "s#'libpulse'##g" \
+	-e "/--enable-libpulse/d" \
+    -i PKGBUILD

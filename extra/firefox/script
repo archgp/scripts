@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sed -e 's/--enable-pulseaudio/--disable-pulseaudio/g' -i mozconfig
+
+echo "ac_add_options --disable-necko-wifi" >> mozconfig
+echo "ac_add_options --disable-dbus" >> mozconfig
+echo "ac_add_options --disable-gconf" >> mozconfig
+
+sed -e "s#'dbus-glib'##g" \
+    -e "s#'libpulse'##g" \
+    -e "s#'gconf'##g" \
+    -e "s#$oldsum#$newsum#g" -i PKGBUILD
+
+updpkgsums

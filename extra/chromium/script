@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sed -e "s#'systemd'##g" \
+	-e "s#'dbus'##g" \
+	-e "s#'libpulse'##g" \
+	-e "s#-Dlinux_link_pulseaudio=1#-Dlinux_link_pulseaudio=0\n    -Dlinux_use_pulseaudio=0#g" \
+    -i PKGBUILD

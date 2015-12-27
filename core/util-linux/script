@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sed -e "s#'systemd'##g" \
+    -e "s#'libsystemd'##g" \
+    -e "/--enable-socket-activation/d" \
+    -e "/socket/d" \
+    -i PKGBUILD

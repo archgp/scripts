@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -e "s#'gtk3'#'gtk2'#g" \
+    -e "s#'gconf'##g" \
+    -e "s#--with-x-toolkit=gtk3#--with-x-toolkit=gtk2 --without-dbus --without-gconf --without-gsettings#g" -i PKGBUILD

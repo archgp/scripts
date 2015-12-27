@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sed -e "s#'systemd'##g" \
+    -e "s#--disable-static#--disable-static --disable-systemd#g" -i PKGBUILD

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sed -e "s/CONFIG_CTRL_IFACE_DBUS=y/#CONFIG_CTRL_IFACE_DBUS=y/g" \
+	-e "s/CONFIG_CTRL_IFACE_DBUS_NEW=y/#CONFIG_CTRL_IFACE_DBUS_NEW=y/g" \
+	-e "s/CONFIG_CTRL_IFACE_DBUS_INTRO=y/#CONFIG_CTRL_IFACE_DBUS_INTRO=y/g" \
+	-i config
+
+sed -e "s#'libdbus'##g" \
+	-e "/dbus/d" \
+	-e "/systemd/d" \
+	-e "s#15be07f0d8003a2239dfba008f09602f1203bbf143004d8979ff4d863153c817#76e12afa0b066068cd08b362f7229b5fa2e1653ebf5b78c97bd751c2e3c2412c#g" \
+    -i PKGBUILD
+
+updpkgsums

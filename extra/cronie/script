@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sed -e "/service/d" \
+    -i PKGBUILD
+
+updpkgsums

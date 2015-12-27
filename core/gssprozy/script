@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sed -e "s#'systemd'##g" \
+    -e "s#--with-initscript=systemd#--with-initscript=sysv#g" \
+    -e "/service/d" \
+    -i PKGBUILD

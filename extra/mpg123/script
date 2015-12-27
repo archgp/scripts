@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -e "s#'libpulse.*'##g" \
+	-e "s#alsa oss sdl jack pulse#alsa oss sdl jack#g" \
+    -i PKGBUILD

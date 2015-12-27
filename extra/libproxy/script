@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sed -e "s#DWITH_WEBKIT3#DWITH_WEBKIT2#g" \
+	-e "s#webkitgtk#webkitgtk2#g" \
+	-e "s#'networkmanager.*'##g" \
+    -i PKGBUILD

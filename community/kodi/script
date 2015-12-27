@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sed -e "s#'libpulse'##g" \
+	-e "s#'upower'##g" \
+	-e "#pulseaudio#d" \
+	-e "#upower#d" \
+	-i PKGBUILD

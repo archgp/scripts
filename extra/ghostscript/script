@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -e "s#'dbus'##g" \
+    -e "s#'gtk3'##g" \
+    -e "s#'gtk3:              needed for gsx'##g" -i PKGBUILD

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -e "s/ gtk-update-icon-cache//g" \
+    -e "/gtk-update-icon-cache/d" \
+    -i PKGBUILD
